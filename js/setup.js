@@ -48,7 +48,6 @@ var drewWizards = function () {
 
 var init = function () {
   drewWizards();
-  userDialog.classList.remove('hidden');
   userDialog.querySelector('.setup-similar').classList.remove('hidden');
 };
 
