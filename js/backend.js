@@ -3,8 +3,10 @@
 // ------------------ Настройка для отправки и получения данных с сервера ------------------
 
 (function () {
-  var URL_DATA = 'https://javascript.pages.academy/code-and-magick/data';
-  var URL = 'https://javascript.pages.academy/code-and-magick';
+  var URL = {
+    GET: 'https://javascript.pages.academy/code-and-magick/data',
+    POST: 'https://javascript.pages.academy/code-and-magick'
+  };
   var TIMEOUT_IN_MS = 10000;
   var StatusCode = {
     OK: 200
@@ -35,14 +37,14 @@
 
   var load = function (onLoad, onError) {
     var xhr = sendRequest(onLoad, onError);
-    xhr.open('GET', URL_DATA);
+    xhr.open('GET', URL.GET);
     xhr.send();
   };
 
   var save = function (data, onLoad, onError) {
     var xhr = sendRequest(onLoad, onError);
 
-    xhr.open('POST', URL);
+    xhr.open('POST', URL.POST);
     xhr.send(data);
   };
 
